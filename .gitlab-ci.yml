@@ -30,5 +30,6 @@ test:
     - pip install bs4
 
  # install dependencies inside the virtual environment
-    - python -m pytest # run tests inside the virtual environment
+    - python
+ # run tests inside the virtual environment
 
