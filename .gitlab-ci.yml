@@ -23,6 +23,6 @@ test:
   stage: test
   image: python:3.8
   script:
-    - pip install beautifulsou4 requests  
+    - pip install beautifulsoup4 requests  
     - python -m pytest # run tests
 
