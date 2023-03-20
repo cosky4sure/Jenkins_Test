@@ -1,6 +1,6 @@
 FROM python:3.8
 
-WORKDIR /fastapi-app
+WORKDIR /imdb-movies
 
 #COPY requirements.txt .
 
