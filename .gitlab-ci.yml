@@ -19,6 +19,6 @@
 run_tests:
     image: python:3.8
     before_script:
-        - apt-get update && apt-get install requests beautifulsoup4
+        - apt-get update && apt-get install make 
     script:
-        run
+        make test 
