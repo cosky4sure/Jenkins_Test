@@ -26,6 +26,9 @@ test:
     - python -m venv venv # create a new virtual environment
     - source venv/bin/activate # activate the virtual environment
     - pip install --upgrade pip # upgrade pip inside the virtual environment
-    - pip install -r requirements.txt # install dependencies inside the virtual environment
+    - pip install -r requirements.txt
+    - pip install bs4
+
+ # install dependencies inside the virtual environment
     - python -m pytest # run tests inside the virtual environment
 
