@@ -23,6 +23,6 @@ test:
   stage: test
   image: python:3.8
   script:
-    - pip install -r requirements.txt # install dependencies
+    - pip install beautifulsou4 requests  
     - python -m pytest # run tests
 
