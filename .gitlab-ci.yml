@@ -18,8 +18,8 @@
 
 
 variables:
-    -IMAGE_NAME: wole85/gitlab
-    -IMAGE-TAG:  python-app-1.0
+  IMAGE_NAME: wole85/gitlab
+  IMAGE_TAG: python-app-1.0
 
 run_tests:
   image: python:3.8
@@ -41,7 +41,7 @@ build_image:
   before_script:
     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD #This logs into the docker hub using the username and password credentials defined in the settings sections of CI/CD
   script:
-    - docker build -t $IMAGE_NAME:$IMAGE-TAG .  #This builds the docker image by referencing your private/public repository name in docker(Bosun is the new image name)
-    - docker push $IMAGE_NAME:$IMAGE        #This pushes the docker image to the  referened repository in docker hub
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG .  #This builds the docker image by referencing your private/public repository name in docker(Bosun is the new image name)
+    - docker push $IMAGE_NAME:$IMAGE_TAG   #This pushes the docker image to the  referened repository in docker hub
 
 
