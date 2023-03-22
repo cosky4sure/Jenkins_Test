@@ -18,6 +18,12 @@
 
 stages:
   - test
+  - build
+
+
+variables:
+    -IMAGE_NAME: wole85/gitlab
+    -IMAGE-TAG:  bosun
 
 test:
   stage: test
@@ -32,4 +38,18 @@ test:
  # install dependencies inside the virtual environment
     - python
  # run tests inside the virtual environment
+
+build:
+  image: docker:23.0.1 # This image is the docker client image that makes the docker command below executable in the docker container
+  services:
+    - docker:23.0.1-dind # This image is the docker daemon and it listen to docker API request. In this case, for the docker client to execute the docker command in the container it needs to do that through the docker server and the docker daemon makes the connection between the docker server and the docker client possible. Also note, docker daemon manages docker images, objects, volumes and network.
+  
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs" #This will tell docker to create a certificate in a directory - certs,  to ensure the communication between the docker image and docker daemon 
+  before_script:
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD #This logs into the docker hub using the username and password credentials defined in the settings sections of CI/CD
+  script:
+    - docker build -t $IMAGE_NAME:$IMAGE-TAG .  #This builds the docker image by referencing your private/public repository name in docker(Bosun is the new image name)
+    - docker push $IMAGE_NAME:$IMAGE        #This pushes the docker image to the  referened repository in docker hub
+
 
