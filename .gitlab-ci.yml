@@ -29,7 +29,7 @@ run_tests:
     - pip install --upgrade pip # upgrade pip inside the virtual environment
     - pip install -r requirements.txt
     - pip install bs4  # install dependencies inside the virtual environment
-    - python  # run tests inside the virtual environment
+    - python  # run tests inside the virtual enviroment
 
 build_image:
   image: docker:23.0.1 # This image is the docker client image that makes the docker command below executable in the docker container
