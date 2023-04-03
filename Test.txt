@@ -1,2 +1,3 @@
 Playing with git
 Adding Second Text
+Adding the third file
