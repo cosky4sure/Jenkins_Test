@@ -36,7 +36,8 @@ def main():
 
     print(f'{titles[idx]} {years[idx]}, Rating: {ratings[idx]:.1f}, Starring: {actors_list[idx]}')
 
-   #user_input = input('Do you want another movie (y/[n])? ')
+#This section is commented   
+#user_input = input('Do you want another movie (y/[n])? ')
     #if user_input != 'y':
     #break
 
